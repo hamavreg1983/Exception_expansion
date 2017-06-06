@@ -9,9 +9,6 @@ using std::cout;
 
 /* ~~~ Function ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
-
-void NormalTest(void);
-
 void NormalTest(void)
 {
 	
@@ -31,8 +28,12 @@ int main()
 		NormalTest();
 	} catch (TException_t<int>& _ex)
 	{
-		//_ex.Print();
+		// do something, like printing the object
 		cout << _ex;
+		
+		// or just one member
+		cout << "\n Msg catched " << _ex.GetExText();
+		
 	} catch (...)
 	{
 		cout << "\nUnknown throw type\n";
